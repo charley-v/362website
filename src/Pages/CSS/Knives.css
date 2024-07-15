@@ -2,6 +2,9 @@
     margin-top: 50px;
     color: white;
 }
+.knives h1{
+    margin: 100px;
+}
 .all-knives{
     margin: 100px 150px;
     display: grid;

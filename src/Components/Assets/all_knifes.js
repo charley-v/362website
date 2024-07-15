@@ -17,6 +17,14 @@ import bayonetsafari from './Bayonet/bayonet-safarimesh.png'
 import bayonetvanilla from './Bayonet/bayonet-vanilla.png'
 import bayoneturban from './Bayonet/bayonet-urbanmasked.png'
 
+import bowieautotronic from './BowieKnife/bowieknife-autotronic.png'
+import bowieblacklaminate from './BowieKnife/bowieknife-blacklaminate.png'
+import bowiebluesteel from './BowieKnife/bowieknife-bluesteel.png'
+import bowieborealforest from './BowieKnife/bowieknife-borealforest.png'
+import bowiebrightwater from './BowieKnife/bowieknife-brightwater.png'
+import bowiecasehardened from './BowieKnife/bowieknife-casehardened.png'
+import bowiecrimsonweb from './BowieKnife/bowieknife-crimsonweb.png'
+
 
 let all_knives = [
     {
@@ -144,6 +152,56 @@ let all_knives = [
         category: "bayonet",  
         image: bayoneturban,
         knife_price: 250.00
-    }
+    },
+    {
+        id:19,
+        name:  "Bowie Knife | Autotronic",
+        category: "bowieknife",  
+        image: bowieautotronic,
+        knife_price: 250.00
+    },
+    {
+        id: 20,
+        name:  "Bowie Knife | Black Laminate",
+        category: "bowieknife",  
+        image: bowieblacklaminate,
+        knife_price: 250.00
+    },
+    {
+        id: 21,
+        name:  "Bowie Knife | Blue Steel ",
+        category: "bowieknife",  
+        image: bowiebluesteel,
+        knife_price: 250.00
+    },
+    {
+        id: 22 ,
+        name:  "Bowie Knife | Boreal Forest",
+        category: "bowieknife",  
+        image: bowieborealforest,
+        knife_price: 250.00
+    },
+    {
+        id: 23,
+        name:  "Bowie Knife | Bright Water ",
+        category: "bowieknife",  
+        image: bowiebrightwater,
+        knife_price: 250.00
+    },
+    {
+        id: 24,
+        name:  "Bowie Knife | Case Hardened",
+        category: "bowieknife",  
+        image: bowiecasehardened,
+        knife_price: 250.00
+    },
+    {
+        id: 25,
+        name:  "Bowie Knife | Crimson Web",
+        category: "bowieknife",  
+        image: bowiecrimsonweb ,
+        knife_price: 250.00
+    },
+
 ]
 export default all_knives

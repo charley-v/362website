@@ -6,7 +6,7 @@ import Item from '../Components/Knife/Knife'
 export const Knives = () => {
   return (
     <div className='knives'>
-    <h1>Trending Knives</h1>
+    <h1>All Knives</h1>
     <div className='all-knives'>
       {all_knives.map((item, i)=>{
         return <Item key={i} id={item.id} name={item.name} image={item.image} knife_price={item.knife_price}/>

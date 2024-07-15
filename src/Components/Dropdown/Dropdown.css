@@ -6,6 +6,8 @@
     left: 625px;
     list-style: none;
     text-align: start;
+    z-index: 1;
+    background-color: #989899;
 }
 .dropdown-menu li {
     background: #989899;
