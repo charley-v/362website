@@ -11,7 +11,7 @@ export const Trending = () => {
       <h1>Trending Knives</h1>
       <div className='trending-item'>
         {data_product.map((knife, i)=>{
-          return <Knife key={i} id={knife.id} name={knife.name} image={knife.image} price={knife.knife_price}/>
+          return <Knife key={i} id={knife.id} name={knife.name} image={knife.image} knife_price={knife.knife_price}/>
         })}
       </div>
 
