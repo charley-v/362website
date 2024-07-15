@@ -1,0 +1,21 @@
+.knife{
+    width: 350px;
+}
+.knife img{
+    margin-left: 60px;
+}
+.knife p{
+    margin: 6px 0px;
+    text-align: center;
+}
+.knife_price{
+    display:block;
+    color:white;
+    font-size: 18px;
+    margin-left: 150px;
+
+}
+.knife:hover{
+    transform: scale(1.05);
+    transition: 0.6s;
+}

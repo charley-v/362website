@@ -1,0 +1,40 @@
+.bannerimg{
+    display: flex;
+    align-items: center;
+    opacity: .6;
+    margin-left: 5px;
+}
+
+.sign{
+    margin-top: -350px;
+    margin-left: 1170px;
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+.signb{
+    margin-left: 1170px;
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.button button{
+    margin-left: 1070px;
+    width: 150px;
+    height: 40px;
+    outline: none;
+    border: 1px solid white;
+    border-radius: 50px;
+    color: black;
+    font-size: 15px;
+    font-weight: 500;
+    background: white;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
