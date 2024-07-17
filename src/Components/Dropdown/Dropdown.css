@@ -1,27 +1,28 @@
 
 .dropdown-menu{
     position:absolute;
-    width: 150px;
+    width: -150px;
     top: 60px;
     left: 625px;
     list-style: none;
     text-align: start;
     z-index: 1;
-    background-color: #989899;
+    background: #242424;
 }
 .dropdown-menu li {
-    background: #989899;
+    background: #242424;
     cursor: pointer;
 }
 
 .dropdown-menu li:hoover {
-    background: #989899;
+    background: #151515;
 }
 
 .dropdown-menu.clicked {
     display: none;
 }
 
+s
 .dropdown-link {
     display: block;
     margin-top: 10px;

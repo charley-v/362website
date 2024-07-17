@@ -13,7 +13,7 @@ export const Dropdown = () => {
             {MenuItems.map((item, index) => {
                 return(
                     <li key={index}>
-                        <Link className={item.cName} to={item.path} onClick={() => setClick(false)}>
+                        <Link style={{textDecoration: 'None', color:'white'}} className={item.cName} to={item.path} onClick={() => setClick(false)}>
                         <img src={item.image} width='30'/>
                         {item.title}
                         </Link>

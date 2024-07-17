@@ -5,7 +5,7 @@
     padding: 5px;
     position: sticky;
     top:0;
-    background: #989899;
+    background: #151515;
 }
 .nav-logo{
     display: flex;
@@ -57,7 +57,7 @@
     cursor: pointer;
 }
 .nav-login-cart button:active{
-    background: #989899
+    background: #151515
 }
 .nav-cart-count{
     width: 15px;
