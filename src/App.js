@@ -9,21 +9,21 @@ import Sell from './Pages/Sell';
 import About from './Pages/About';
 import Product from './Pages/Product';
 import { Knives } from './Pages/Knives';
-
-
-
+import Footer from './Components/Footer/Footer';
+import bayonetbanner from './Components/Assets/Banners/bayonetbanner.png';
+import bowiebanner from './Components/Assets/Banners/bowieknifebanner.png';
 
 
 function App() {
   return (
     <div>
       <BrowserRouter> 
-      <Navbar/>
+      <Navbar />
       <Routes>
         <Route path='/' element={<Shop/>}/>
         <Route path='/knives' element={<Knives/>}/>
-        <Route path='/bayonet' element={<ShopCategory category = 'bayonet'/>}/>
-        <Route path='/bowieknife' element={<ShopCategory category = 'bowieknife'/>}/>
+        <Route path='/bayonet' element={<ShopCategory banner={bayonetbanner}category = 'bayonet'/>}/>
+        <Route path='/bowieknife' element={<ShopCategory banner={bowiebanner}category = 'bowieknife'/>}/>
         <Route path='/butterflyknife' element={<ShopCategory category = 'butterflyknife'/>}/>
         <Route path='./classicknife' element={<ShopCategory category = 'classicknife'/>}/>
         <Route path='./falchionknife' element={<ShopCategory category = 'falchionknife'/>}/>
@@ -51,6 +51,7 @@ function App() {
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/login' element={<Loginsignup/>}/>
       </Routes>
+      <Footer/>
       </BrowserRouter>
     </div>
   );

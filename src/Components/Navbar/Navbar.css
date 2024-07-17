@@ -3,8 +3,9 @@
     height: 90px;
     justify-content: space-around;
     padding: 5px;
-    background-color: #989899;
-    box-shadow: 0 1px 3px -2px #989899;
+    position: sticky;
+    top:0;
+    background: #989899;
 }
 .nav-logo{
     display: flex;
@@ -29,6 +30,7 @@
     justify-content: center;
     gap: 3px;
     cursor: pointer;
+    
 }
 .nav-menu hr{
     border: none;
@@ -72,4 +74,15 @@
 }
 .nav-menu Link{
     color: black;
+}
+@media(max-width:1280px){
+    .navbar{
+        padding:12px 50px;
+    }
+    .nav-logo img{
+        width: 150px;
+    }
+    .nav-logo p{
+        font-size: 25px;
+    }
 }

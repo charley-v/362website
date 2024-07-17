@@ -1,8 +1,10 @@
-.shopcategory-indexSort{
-    margin-top: 50px;
-    color: white;
+.shopcategory-banner{
+    display: block;
+    margin: auto 400px;
 }
-.shopcategory-indexSort span{
+.shopcategory-indexSort{
+    margin-top: 0px;
+    color: white;
 }
 .shopcategory-product{
     margin: 100px 150px;

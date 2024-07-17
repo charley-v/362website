@@ -1,7 +1,7 @@
 .productdisplay {
     display: flex;
     margin: 0px 170px;
-    margin-left: 10px;
+    margin-left: 100px;
 }
 
 .productdisplay-left{
@@ -45,7 +45,7 @@
     font-weight: 700;
 }
 .productdisplay-right-wear h1{
-    margin-top: 55px;
+    margin-top: 60px;
     font-size: 20px;
     font-weight: 600;
 }
@@ -53,22 +53,26 @@
     display: flex;
     margin: 25px 0px;
     gap: 10px;
+    margin-top: 40px;
 }
 .productdisplay-right-wears div{
-    padding: 18px 24px;
-    border: 1px solid blue;
+    padding: 10px 20px;
+    border: 1px solid white;
     border-radius: 3px;
     cursor: pointer;
-    font-size:12px ;
+    font-size: 12px ;
+    border-radius: 20px;
 }
 .productdisplay-right button{
-    padding: 20px 40px;
+    padding: 10px 30px;
     width: 150px;
     font-size: 15px;
     font-weight: 600;
-    background: red;
+    background: white;
     margin-bottom: 40px;
     border: none;
     outline: none;
     cursor: pointer;
+    border-radius: 20px;
+    margin-top: 40px;
 }

@@ -13,7 +13,6 @@ export const Banner = () => {
             <h2>BUY & SELL</h2>
         </div>
         <div className='signb'>
-            <p>Your Favorite</p>
             <p>CS2 Skins</p>
         </div>
         <div className='button'>

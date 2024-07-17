@@ -1,0 +1,76 @@
+.cartitems{
+    margin: 100px 170px;
+    color: white;
+}
+
+.cartitems hr{
+    margin-top: -10px;
+    height: 3px;
+    background: white;
+    border: 0;
+}
+
+.cartitems-format-main{
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    gap: 75px;
+    padding: 20px 0px;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+
+}
+.cartitems-format{
+    font-size: 15px;
+    font-weight: 500;
+    display:flex;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 2fr;
+    gap: 100px;
+    margin-bottom: 10px;
+}
+.carticon-product-icon{
+    height: 62px;
+}
+
+.cartitems-remove-icon{
+    margin: 10px 150px;
+    cursor: pointer;
+}
+.cartitems-quantity{
+    width: 64px;
+    height: 50px;
+    border: 2px solid white;
+    background: white;
+}
+
+.cartitems-total{
+    display: flex;
+    color: white;
+    margin: 100px 0px;
+}
+.cartitems-total{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 200px;
+    gap: 40px;
+    color: white;
+}
+.cartitems-total-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0px;
+    color: white;
+}
+.cartitems-total button {
+    width: 100px;
+    height: 58px;
+    outline: none;
+    border:none;
+    background: red;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
