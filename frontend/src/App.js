@@ -25,23 +25,23 @@ function App() {
         <Route path='/bayonet' element={<ShopCategory banner={bayonetbanner}category = 'bayonet'/>}/>
         <Route path='/bowieknife' element={<ShopCategory banner={bowiebanner}category = 'bowieknife'/>}/>
         <Route path='/butterflyknife' element={<ShopCategory category = 'butterflyknife'/>}/>
-        <Route path='./classicknife' element={<ShopCategory category = 'classicknife'/>}/>
-        <Route path='./falchionknife' element={<ShopCategory category = 'falchionknife'/>}/>
-        <Route path='./flipknife' element={<ShopCategory category = 'flipknife'/>}/>
-        <Route path='./gutknife' element={<ShopCategory category = 'gutknife'/>}/>
-        <Route path='./huntsmanknife' element={<ShopCategory category = 'huntsmanknife'/>}/>
-        <Route path='./karambit' element={<ShopCategory category = 'karambit'/>}/>
-        <Route path='./kukriknife' element={<ShopCategory category = 'kukriknife'/>}/>
-        <Route path='./m9bayonet' element={<ShopCategory category = 'm9bayonet'/>}/>
-        <Route path='./navajaknife' element={<ShopCategory category = 'navajaknife'/>}/>
-        <Route path='./nomadknife' element={<ShopCategory category = 'nomadknife'/>}/>
-        <Route path='./paracordknife' element={<ShopCategory category = 'paracordknife'/>}/>
-        <Route path='./shadowdaggers' element={<ShopCategory category = 'shadowdaggers'/>}/>
-        <Route path='./skeletonknife' element={<ShopCategory category = 'skeletonknife'/>}/>
-        <Route path='./stilettoknife' element={<ShopCategory category = 'stilettoknife'/>}/>
-        <Route path='./survivalknife' element={<ShopCategory category = 'survivalknife'/>}/>
-        <Route path='./talonknife' element={<ShopCategory category = 'talonknife'/>}/>
-        <Route path='./ursusknife' element={<ShopCategory category = 'ursusknife'/>}/>
+        <Route path='/classicknife' element={<ShopCategory category = 'classicknife'/>}/>
+        <Route path='/falchionknife' element={<ShopCategory category = 'falchionknife'/>}/>
+        <Route path='/flipknife' element={<ShopCategory category = 'flipknife'/>}/>
+        <Route path='/gutknife' element={<ShopCategory category = 'gutknife'/>}/>
+        <Route path='/huntsmanknife' element={<ShopCategory category = 'huntsmanknife'/>}/>
+        <Route path='/karambit' element={<ShopCategory category = 'karambit'/>}/>
+        <Route path='/kukriknife' element={<ShopCategory category = 'kukriknife'/>}/>
+        <Route path='/m9bayonet' element={<ShopCategory category = 'm9bayonet'/>}/>
+        <Route path='/navajaknife' element={<ShopCategory category = 'navajaknife'/>}/>
+        <Route path='/nomadknife' element={<ShopCategory category = 'nomadknife'/>}/>
+        <Route path='/paracordknife' element={<ShopCategory category = 'paracordknife'/>}/>
+        <Route path='/shadowdaggers' element={<ShopCategory category = 'shadowdaggers'/>}/>
+        <Route path='/skeletonknife' element={<ShopCategory category = 'skeletonknife'/>}/>
+        <Route path='/stilettoknife' element={<ShopCategory category = 'stilettoknife'/>}/>
+        <Route path='/survivalknife' element={<ShopCategory category = 'survivalknife'/>}/>
+        <Route path='/talonknife' element={<ShopCategory category = 'talonknife'/>}/>
+        <Route path='/ursusknife' element={<ShopCategory category = 'ursusknife'/>}/>
 
         <Route path='/about' element={<About/>}/>
         <Route path='/sell' element={<Sell/>}/>
