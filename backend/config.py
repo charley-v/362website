@@ -1,12 +1,20 @@
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from flask_cors import CORS
+from dotenv import load_dotenv
+import os
+import redis
+from datetime import timedelta
 
-app = Flask(__name__)
-CORS(app)
+load_dotenv()
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///mydatabase.db"
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
+class ApplicationConfig:
+    SECRET_KEY = os.environ["SECRET_KEY"]
+    
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SQLALCHEMY_ECHO = True
+    SQLALCHEMY_DATABASE_URI = r"sqlite:///./db.sqlite"
 
-db = SQLAlchemy(app)
+
+    SESSION_TYPE = "redis"
+    SESSION_PERMANENT = False
+    SESSION_USE_SIGNER = True
+    SESSION_REDIS = redis.from_url("redis://127.0.0.1:6379")
 

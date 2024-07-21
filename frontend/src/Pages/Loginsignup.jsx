@@ -1,42 +1,63 @@
 import React from 'react'
 import './CSS/Loginsignup.css'
-import { useState } from 'react'
+import {useState} from 'react'
+import {Link} from 'react-router-dom'
+import axios from 'axios'
 
-export const Loginsignup = () => {
+export const Loginsignup = (props) => {
+  const [email, setEmail]= useState('')
   const [username, setUsername] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [confirmpassword, setConfirmPassword] = useState('')
-  const submitForm = ()=>
+  const [password, setPassword]= useState('')
+  
+
+  const logInUser = async ()=>
   {
-    console.log("Form Submited");
-  }
+    if(email.length === 0){
+      alert("Invalid Email")
+    }
+    else if(password.length === 0){
+      alert("Invalid Password")
+    }
+    else {
+      axios.post("http://127.0.0.1:5000/login", {
+        email: email,
+        username: username,
+        password: password,
+      })
+      .then(function(response){
+        console.log(response)
+        window.location.href = "/";
+      })
+      .catch(function(error){
+        console.log(error, "error")
+        if(error.response.status === 401){
+          alert("Invalid Email or Password")
+        }
+    })
+    }
+}
+
   return (
-    <body>
-    <div className='loginsignup'>
-      <div class="login-box">
-    <h2>Signup</h2>
-    <div class="textbox">
-        <input type="text" placeholder="Username" value={username} name='username' onChange={(e)=>{setUsername(e.target.value)}} required/>
+    <div className='login'>
+      <div className="login-box">
+    <h2>Login</h2>
+    <div className="textbox">
+        <input type="text" placeholder='Email'value={email} name='email' onChange={(e) =>setEmail(e.target.value)}/>
     </div>
-    <div class="textbox">
-        <input type="text" placeholder="Email" value={email} name='email'onChange={(e)=>{setEmail(e.target.value)}} required/>
+    <div className="textbox">
+        <input type="password" placeholder='Password' value={password} name='password' onChange={(e)=>setPassword(e.target.value)}/>
     </div>
-    <div class="textbox">
-        <input type="password" placeholder="Password" value={password} name='password'onChange={(e)=>{setPassword(e.target.value)}}required/>
-    </div>
-    <div class="textbox">
-        <input type="password" placeholder="Confirm Password" value={confirmpassword} name='confirmpassword' onChange={(e)=>{setConfirmPassword(e.target.value)}}required/>
-    </div>
-    <div class="remember-me">
+    <div className="remember-me">
         <input type="checkbox" id="remember" name="remember"/>
-        <label for="remember">Remember Me</label>
+        <label>Remember Me</label>
     </div>
-    <button class="btn" onClick={submitForm}>Sign Up</button>
+    <button type="button" className="btn" onClick={logInUser}>Login</button>
+        </div>
+      <div className="login-link">
+            <Link to='/signup'>New Customer?</Link>
         </div>
 
     </div>
-    </body>
   )
 }
 export default Loginsignup

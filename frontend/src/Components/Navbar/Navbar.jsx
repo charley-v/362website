@@ -1,10 +1,12 @@
-import React, {useContext, useState}from 'react'
+import React, {useContext, useEffect, useState}from 'react'
 import './Navbar.css'
 import { Link} from 'react-router-dom'
 import logo from '../Assets/logo.png'
 import shopping_cart from '../Assets/shopping-cart.png'
 import Dropdown from '../Dropdown/Dropdown'
 import { ShopContext } from '../../Context/ShopContext'
+
+
 
 const Navbar = () => {
     const  [dropdown, setDropdown] = useState(false);

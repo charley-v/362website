@@ -1,4 +1,4 @@
-import './App.css';
+
 import Navbar from './Components/Navbar/Navbar';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Shop from './Pages/Shop';
@@ -12,6 +12,7 @@ import { Knives } from './Pages/Knives';
 import Footer from './Components/Footer/Footer';
 import bayonetbanner from './Components/Assets/Banners/bayonetbanner.png';
 import bowiebanner from './Components/Assets/Banners/bowieknifebanner.png';
+import Signup from './Pages/Signup';
 
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
         </Route>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/login' element={<Loginsignup/>}/>
+        <Route path='/signup' element={<Signup/>}/>
       </Routes>
       <Footer/>
       </BrowserRouter>
