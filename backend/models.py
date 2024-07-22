@@ -1,8 +1,8 @@
 from flask_sqlalchemy import SQLAlchemy
 from uuid import uuid4
+from flask_jwt_extended import JWTManager
 
 db = SQLAlchemy()
-
 def get_uuid():
     return uuid4().hex
 
