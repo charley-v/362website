@@ -4,7 +4,6 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Shop from './Pages/Shop';
 import ShopCategory from './Pages/ShopCategory';
 import Cart from './Pages/Cart';
-import Loginsignup from './Pages/Loginsignup';
 import Sell from './Pages/Sell';
 import About from './Pages/About';
 import Product from './Pages/Product';
@@ -13,13 +12,21 @@ import Footer from './Components/Footer/Footer';
 import bayonetbanner from './Components/Assets/Banners/bayonetbanner.png';
 import bowiebanner from './Components/Assets/Banners/bowieknifebanner.png';
 import Signup from './Pages/Signup';
+import Profile from './Pages/profile';
+import Loginsignup from './Pages/Loginsignup';
+import useToken from './useToken';
+
+
+
 
 
 function App() {
+  const {token, removeToken, setToken} = useToken();
+  
   return (
     <div>
       <BrowserRouter> 
-      <Navbar />
+      <Navbar token={removeToken} />
       <Routes>
         <Route path='/' element={<Shop/>}/>
         <Route path='/knives' element={<Knives/>}/>
@@ -43,16 +50,22 @@ function App() {
         <Route path='/survivalknife' element={<ShopCategory category = 'survivalknife'/>}/>
         <Route path='/talonknife' element={<ShopCategory category = 'talonknife'/>}/>
         <Route path='/ursusknife' element={<ShopCategory category = 'ursusknife'/>}/>
-
         <Route path='/about' element={<About/>}/>
         <Route path='/sell' element={<Sell/>}/>
         <Route path='/product' element={<Product/>}>
           <Route path=':productId' element={<Product/>}/>
         </Route>
         <Route path='/cart' element={<Cart/>}/>
-        <Route path='/login' element={<Loginsignup/>}/>
         <Route path='/signup' element={<Signup/>}/>
-      </Routes>
+        <Route path='/login' element={<Loginsignup setToken={setToken}/>}/>
+
+        {!token && token !== "" && token !== undefined ? (
+            <Route path='/profile' element={<Loginsignup setToken={setToken} />} />
+          ) : (
+            <Route path='/profile' element={<Profile token={token} setToken={setToken} />} />
+          )}
+          <Route path='/login' element={<Loginsignup setToken={setToken} />} />
+        </Routes>
       <Footer/>
       </BrowserRouter>
     </div>

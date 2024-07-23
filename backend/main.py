@@ -40,37 +40,48 @@ def signup():
     db.session.add(new_user)
     db.session.commit()
 
-    #session["user_id"] = new_user.id  
-
     return jsonify({
         "id": new_user.id,
         "email": new_user.email
     })
 
 
-@app.route("/login", methods=["POST"])
+@app.route("/logintoken", methods=["POST"])
 def login():
-    username = request.json["username"]
-    email = request.json["email"]
-    password = request.json["password"]
+    try:
+        data = request.get_json() 
+        if not data:
+            app.logger.error("No JSON data in request")
+            return jsonify({"error": "Bad Request"}), 400
 
-    user = User.query.filter_by(email = email).first()
-    username = User.query.filter_by(username = username).first()
+        email = data.get("email")
+        password = data.get("password")
+        if not email or not password:
+            app.logger.error(f"Missing email or password: email={email}, password={password}")
+            return jsonify({"error": "Missing email or password"}), 400
+
+        user = User.query.filter_by(email=email).first()
+        
+        if user is None:
+            app.logger.error(f"User not found: email={email}")
+            return jsonify({"error": "Unauthorized Access"}), 401
+      
+        if not bcrypt.check_password_hash(user.password, password):
+            app.logger.error(f"Password check failed for user: email={email}")
+            return jsonify({"error": "Unauthorized"}), 401  
+        
+        access_token = create_access_token(identity=email)
+
+        return jsonify({
+            "email": user.email,
+            "access_token": access_token
+        })
     
-
-    if user is None:
-        return jsonify({"error": "Unauthorized Access"}), 401
-  
-    if not bcrypt.check_password_hash(user.password, password):
-        return jsonify({"error": "Unauthorized"}), 401  
+    except Exception as e:
+        app.logger.error(f"Error during login: {str(e)}")
+        return jsonify({"error": "Internal Server Error"}), 500
     
-    #session["user_id"] = user.id
-    access_token = create_access_token(identity = email)
-
-    return jsonify({
-        "email" : user.email,
-        "access_token": access_token
-    })
+    
 
 @app.after_request
 def refresh_jwts(response):
@@ -95,19 +106,19 @@ def logout_user():
     unset_jwt_cookies(response)
     return response
 
-@app.route('/account/<getemail>')
+@app.route('/profile/<email>')
 @jwt_required()
-def my_account(getemail):
-    print(getemail)
-    if not getemail:
+def my_profile(email):
+    current_user_email = get_jwt_identity()
+    print(email)
+    if not email or email != current_user_email:
         return jsonify({"error": "Unauthorized access"}), 401
     
-    user = User.query.filter_by(email =getemail).first()
+    user = User.query.filter_by(email =email).first()
 
     response_body = {
         "id": user.id,
-        "email": user.email,
-        "username": user.username
+        "email": user.email
     }
 
     return response_body

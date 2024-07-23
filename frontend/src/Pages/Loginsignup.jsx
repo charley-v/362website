@@ -3,49 +3,69 @@ import './CSS/Loginsignup.css'
 import {useState} from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
-export const Loginsignup = (props) => {
-  const [email, setEmail]= useState('')
-  const [username, setUsername] = useState('')
-  const [password, setPassword]= useState('')
+function Loginsignup(props){
+  const [loginForm, setloginForm] = useState({
+    email: "",
+    password: ""
+  })
   
 
-  const logInUser = async ()=>
-  {
-    if(email.length === 0){
-      alert("Invalid Email")
-    }
-    else if(password.length === 0){
-      alert("Invalid Password")
-    }
-    else {
-      axios.post("http://127.0.0.1:5000/login", {
-        email: email,
-        username: username,
-        password: password,
-      })
-      .then(function(response){
+  const navigate = useNavigate()
+  function logInUser(event) {
+    event.preventDefault();  
+  
+    const loginData = {
+      email: loginForm.email,
+      password: loginForm.password,
+    };
+  
+    console.log("Login Data:", loginData); 
+  
+    axios.post("http://127.0.0.1:5000/logintoken", loginData)
+      .then((response) => {
         console.log(response)
-        window.location.href = "/";
+        props.setToken(response.data.access_token)
+        alert("Successfully logged in");
+        localStorage.setItem('email', loginForm.email);
+        localStorage.setItem('token', response.data.access_token);
+        navigate('/profile')
       })
-      .catch(function(error){
-        console.log(error, "error")
-        if(error.response.status === 401){
-          alert("Invalid Email or Password")
+      .catch((error) => {
+        if (error.response) {
+          console.log(error.response);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+          if (error.response.status === 401) {
+            alert("Invalid Email or Password");
+          } else {
+            alert("Internal Server Error. Please try again later.");
+          }
         }
-    })
-    }
-}
+      });
+  
+    setloginForm({
+      email: "",
+      password: ""
+    });
+  }
+
+function handleChange(event){
+  const {value, name} = event.target
+  setloginForm(prevNote => ({
+    ...prevNote, [name]: value})
+  )}
 
   return (
     <div className='login'>
       <div className="login-box">
     <h2>Login</h2>
     <div className="textbox">
-        <input type="text" placeholder='Email'value={email} name='email' onChange={(e) =>setEmail(e.target.value)}/>
+        <input type="text" placeholder='Email'value={loginForm.email} name='email' onChange={handleChange}/>
     </div>
     <div className="textbox">
-        <input type="password" placeholder='Password' value={password} name='password' onChange={(e)=>setPassword(e.target.value)}/>
+        <input type="password" placeholder='Password' value={loginForm.password} name='password' onChange={handleChange}/>
     </div>
     <div className="remember-me">
         <input type="checkbox" id="remember" name="remember"/>
