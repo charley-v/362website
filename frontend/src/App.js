@@ -57,7 +57,7 @@ function App() {
         </Route>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/signup' element={<Signup/>}/>
-        <Route path='/login' element={<Loginsignup setToken={setToken}/>}/>
+        
 
         {!token && token !== "" && token !== undefined ? (
             <Route path='/profile' element={<Loginsignup setToken={setToken} />} />

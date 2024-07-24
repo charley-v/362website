@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
+import { Link} from 'react-router-dom'
 import './ProductDisplay.css'
 import { ShopContext } from '../../Context/ShopContext';
+import closebutton from '../Assets/closebutton.png'
 
 
 export const ProductDisplay = (props) => {
@@ -40,6 +42,9 @@ export const ProductDisplay = (props) => {
                 </div>
             </div>
             <button onClick={()=>{addToCart(product.id)}}>ADD TO CART</button>
+            <div className="goback">
+            <Link to='/knives'><img src={closebutton} width='30' height='30' alt=""/> </Link>
+            </div>
         </div>    
     </div>
   )

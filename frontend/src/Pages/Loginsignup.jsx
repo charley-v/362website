@@ -74,7 +74,7 @@ function handleChange(event){
     <button type="button" className="btn" onClick={logInUser}>Login</button>
         </div>
       <div className="login-link">
-            <Link to='/signup'>New Customer?</Link>
+            <Link style={{textDecoration: 'None', color:'blue'}} to='/signup'>New Customer?</Link>
         </div>
 
     </div>

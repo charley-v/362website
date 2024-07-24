@@ -1,6 +1,7 @@
 import React from 'react'
 import './Knife.css'
 import { Link } from 'react-router-dom'
+import closebutton from '../Assets/closebutton.png'
 
 export const Knife = (props) => {
   return (
@@ -10,7 +11,6 @@ export const Knife = (props) => {
         <div className='knife_price'>
             ${props.knife_price}
         </div>
-
     </div>
   )
 }

@@ -47,11 +47,13 @@ const Navbar = (props) => {
                <Link to='/'> <img width='120' src={logo} alt = ''/></Link>
             </div>
             <ul className="nav-menu">
-                <li> <Link style={{textDecoration: 'None', color:'white'}} to='/'> Shop </Link></li>
+                <li> <Link style={{textDecoration: 'None', color:'white'}} to='/'> Home </Link></li>
                 <li onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}> <Link style={{textDecoration: 'None', color:'white'}} to='./knives'>Knives </Link> {dropdown && <Dropdown />}</li>
                 <li> <Link style={{textDecoration: 'None', color:'white'}} to='./login'>Sell </Link></li>
                 <li> <Link style={{textDecoration: 'None', color:'white'}} to='./about'>About </Link></li>
             </ul>
+
+
             <div className="nav-login-cart">
 
                 

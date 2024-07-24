@@ -76,3 +76,6 @@
     .signup-link a:hover {
         text-decoration: underline;
     }
+    .login-link{
+        margin-left: 900px;
+    }
